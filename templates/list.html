@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<main>
+  <div id="content">
+    <h1>Todo List</h1>
+    <a href="add">Add a new item</a>
+
+    {% if todo_items|length == 0 %}
+    <p>No items in the list</p>
+    {% endif %}
+
+    <ol>
+      {% for todo in todo_items %}
+      <li>
+        {{ todo.name }}
+        <form action="/delete/{{ todo._id }}" method="POST" class="del_btn">
+          <input type="submit" onclick="delete_modal()" value="Delete Item" />
+        </form>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<main>
+  <h1>Add Item</h1>
+
+  <form method="POST">
+    <fieldset>
+      <legend>Please fill out your Todo Item:</legend>
+
+      <label>
+        New Todo:
+        <input type="text" name="item_name" />
+      </label>
+      <input type="submit" class="submit" value="Submit!" />
+    </fieldset>
+  </form>
+</main>
+{% endblock content %}
